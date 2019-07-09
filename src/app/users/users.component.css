@@ -1,0 +1,12 @@
+tr {
+  cursor: pointer;
+}
+tr:hover {
+  /* border: solid red 1px; */
+  /* transform: scale(1.01, 1.01); */
+  /* background-color: azure !important;  */
+}
+tbody:hover tr:not(:hover) {
+  filter: blur(3px);
+  /* border: dashed 3px red; */
+}

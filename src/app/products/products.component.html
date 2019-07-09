@@ -1,0 +1,26 @@
+<p>
+  products works!
+</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group">
+    <label for="">Name *</label>
+    <input type="text" class="form-control" formControlName="name" />
+    <small *ngIf="myForm.controls.name.dirty && myForm.controls.name?.errors?.pattern">Name is necessary</small>
+    <!-- {{myForm.controls.name?.errors?.pattern | json} -->
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Enviar" [disabled]="!myForm.valid">
+  </div>
+</form>
+<div>
+  Value: {{myForm.value | json}}
+</div>
+<!-- {{myForm}} -->
+<ul>
+  <li *ngFor="let item of products">
+    <!-- <a [routerLink]="['/product-detail', item.id]">ID: {{item.id}} Name: {{item.name}}</a> -->
+    <span (click)="goProductDetail(item)">
+      ID: {{item.id}} Name: {{item.name}}
+    </span>
+  </li>
+</ul>

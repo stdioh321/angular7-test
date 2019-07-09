@@ -17,5 +17,32 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul> -->
+<!-- <a routerLink="/home" routerLinkActive="active">HOME</a> |
+<a routerLink="home/abc" routerLinkActive="active">HOME abc</a> |
+<a routerLink="products" routerLinkActive="active">Products</a> -->
 
-<router-outlet></router-outlet>
+
+
+<!-- <div><a [routerLink]="[{ outlets : { sidebar : ['sidebar'] }}]">Sidebar</a></div> -->
+<!-- <div><a [routerLink]="[{ outlets : { sidebar : ['prod'] }}]">Prod</a></div>
+
+<div>
+  <h1>Sidebar Here</h1>
+  <router-outlet name="sidebar"></router-outlet>
+</div> -->
+
+<!-- 
+<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+
+  <router-outlet #o="outlet"></router-outlet>
+</div> -->
+<a routerLink='home'>Home</a> |
+<a routerLink='products'>Products</a> |
+<a routerLink='users'>Users</a>
+
+<hr />
+<div [@fadeAnimation]="prepareRoute(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

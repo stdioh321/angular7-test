@@ -1,0 +1,37 @@
+<input name="login" #log>
+
+
+
+<hr />
+<div class="row" [@fadeAnimation]="name">
+
+  <div class="col">
+    <a routerLink='/users'>
+      <button class="btn btn-success">Back</button>
+    </a>
+    <ul class="list-group" *ngIf="user" highlight='blue'>
+      <li class="list-group-item">{{user.name}}</li>
+      <li class="list-group-item">{{user.username}}</li>
+      <li class="list-group-item">{{user.email}}</li>
+      <li class="list-group-item">{{user.phone}}</li>
+      <li class="list-group-item">{{user.website}}</li>
+      <li class="list-group-item">
+        <ul class="list-group">
+          <li class="list-group-item">{{user.address.street}}</li>
+          <li class="list-group-item">{{user.address.suite}}</li>
+          <li class="list-group-item">{{user.address.city}}</li>
+          <li class="list-group-item">{{user.address.zipcode}}</li>
+          <li class="list-group-item">{{user.address.geo.lat}} | {{user.address.geo.lng}}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="list-group">
+          <li class="list-group-item">{{user.company.name}}</li>
+          <li class="list-group-item">{{user.company.catchPhrase}}</li>
+          <li class="list-group-item">{{user.company.bs}}</li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</div>
